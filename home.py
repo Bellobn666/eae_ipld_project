@@ -4,7 +4,7 @@ import base64
     
 # ----- Page configs (tab title, favicon) -----
 st.set_page_config(
-    page_title="<Your Name> Portfolio",
+    page_title="Bello Nasiru Aliyu Portfolio",
     page_icon="📊",
 )
 
@@ -15,8 +15,8 @@ def home_page():
         st.image("eae_img.png", width=200)
         st.header("Introduction to Programming Languages for Data")
         st.write("###")
-        st.write("***Final Project - Feb 2025***")
-        st.write("**Author:** <Your Name>")
+        st.write("Final Project - Feb 2025")
+        st.write("Author:Bello Nasiru Aliyu")
         st.write("**Instructor:** [Enric Domingo](https://github.com/enricd)")
 
 
