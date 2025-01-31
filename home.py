@@ -21,11 +21,11 @@ def home_page():
 
 
     # ----- Top title -----
-    st.html("""<div style="text-align: center;"><h1 style="text-align: center;">👋 Hi! My name is ????</h1></div>""")  # TODO: Add your name
+    st.html("""<div style="text-align: center;"><h1 style="text-align: center;">👋 Hi! My name is Bello Nasiru Aliyu</h1></div>""")  # TODO: Add your name
 
 
     # ----- Profile image file -----
-    profile_image_file_path = "profile.png"       # TODO: Upload your profile image to the same folder as this script and update this if it has a different name
+    profile_image_file_path = "bello.jpg"       # TODO: Upload your profile image to the same folder as this script and update this if it has a different name
 
     with open(profile_image_file_path, "rb") as img_file:
         img = "data:image/png;base64," + base64.b64encode(img_file.read()).decode()
@@ -40,7 +40,7 @@ def home_page():
 
 
     # ----- Personal title or short description -----
-    current_role = "Current Role and/or Studies or Description"   # TODO: Change this
+    current_role = "Data Analyst"   # TODO: Change this
 
     st.html(f"""<div style="text-align: center;"><h4><i>{current_role}</i></h4></div>""")
 
@@ -52,18 +52,25 @@ def home_page():
 
     # TODO: Modify and adapt the following lines to your info, you can add or remove some details if you want
     st.write("""
-    - 🧑‍💻 I am a <Current Role and/or Studies> 
+    - 👨‍💻 I am a Data Analyst with a passion for uncovering insights from data and helping businesses make data-driven decisions.
 
-    - 🛩️ prev: <Previous Experience, Background or Studies>
+    - 🛩️ prev: Bachelor's degree in Computer Science and 2 years of experience in data analysis and visualization.
 
-    - ❤️ <Your Passion and/or Interests>
+    - ❤️ Passionate about machine learning, data visualization, and storytelling with data.
 
-    - 🤖 <Your Personal Projects>
+    - 🏂 Enjoy hiking, photography, and exploring new technologies.
 
-    - 🏂 <Your Hobbies>
+    - 📫 How to reach me: bellobn6666@yahoo.com
 
-    - 📫 How to reach me: <Your Email>
+    - 🏠 Barcelona
 
+    - 🛩️ prev: 6 years of experience with SQL, Python, and front-end development.
+
+    - ❤️ Passionate about continuous learning, problem-solving, and innovation.
+
+    - 🏂 Hobbies include reading, traveling, and playing chess.
+
+    - 📫 How to reach me: bellobn6666@yahoo.com
     - 🏠 Barcelona
     """)
 
