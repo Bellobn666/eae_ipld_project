@@ -46,10 +46,28 @@ max_year = movies_df['release_year'].max()
 num_missing_directors = movies_df['director'].isna().sum()
 
 # TODO: Ex 2.4: How many different countries are there in the data?
-movies_df['country'] = movies_df['country'].fillna('Unknown')
-all_countries = ', '.join(movies_df['country'].dropna().tolist()).split(', ')
-unique_countries = set(all_countries)
-n_countries =  len(unique_countries)
+movies_df["country"] = movies_df["country"].fillna('Unknown')
+
+# Then list the unique entries. As some of them are lists of countries already, because that movie/series was produced in multiple countries, 
+# you will need to join with ", " all the elements of the list into a single string, and then split it by ", " to get a list of all the individual countries.
+# Finally, you can get the number of unique countries by getting the length of the list of unique countries, you can use a set {} to get the unique countries or convert the entire
+# list into a pd.Series and use .unique() to get the list of unique countries and then its number.
+
+movies_df['country'] = movies_df['country'].apply(lambda x: ", ".join(x) if isinstance(x, list) else x)  # Join lists
+
+
+all_countries = movies_df['country'].str.split(", ").explode()
+
+cleaned_countries = all_countries.str.strip().str.replace(r',$', '', regex=True)
+
+cleaned_countries = cleaned_countries[cleaned_countries != '']
+
+unique_countries = set(cleaned_countries)
+
+print(unique_countries)
+
+n_countries = len(unique_countries)  # TODO n_countries has to be a single integer number with the unique number of different countries (you can build this in multiple lines and steps)
+
 
 # TODO: Ex 2.5: How many characters long are on average the title names?
 movies_df['title_length'] = movies_df['title'].apply(lambda x: len(x))
