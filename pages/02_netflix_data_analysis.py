@@ -60,7 +60,7 @@ all_countries = movies_df['country'].str.split(", ").explode()
 
 cleaned_countries = all_countries.str.strip().str.replace(r',$', '', regex=True)
 
-cleaned_countries = cleaned_countries[cleaned_countries != '']
+cleaned_countries = cleaned_countries[(cleaned_countries != '' )& (cleaned_countries != 'Unknown')]
 
 unique_countries = set(cleaned_countries)
 
